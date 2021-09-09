@@ -96,10 +96,11 @@ std::vector<vector3> process(std::vector<vector3> inPoints, float deviation) {
             if (i.X < MIN_DEV_x || i.Y < MIN_DEV_y || i.Z < MIN_DEV_z ) pass = false;
             
 
-            if (pass == false) newPoints.push_back(i);  
-
+            if (pass == false) {
+                newPoints.push_back(i);
+                last = i;
+            }
         }
-        last = i;
     }
     return newPoints;
 }
